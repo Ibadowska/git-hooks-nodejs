@@ -40,7 +40,7 @@
     },
     "parserPreset": {
       "parserOpts": {
-        "issuePrefixes": ["PROJ-"]
+        "issuePrefixes": ["ISSUE-"]
       }
     }
   }
