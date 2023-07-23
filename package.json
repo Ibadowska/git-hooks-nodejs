@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
     "eslint": "^8.45.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
@@ -23,7 +24,8 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "post-commit": "npm run success-message"
+      "post-commit": "npm run success-message",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -31,5 +33,15 @@
       "eslint",
       "jest --findRelatedTests || jest --passWithNoTests"
     ]
+  },
+  "commitlint": {
+    "rules": {
+    "references-empty": [2, "never"]
+    },
+    "parserPreset": {
+      "parserOpts": {
+        "issuePrefixes": ["PROJ-"]
+      }
+    }
   }
 }
